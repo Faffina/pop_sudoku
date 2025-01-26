@@ -10,7 +10,7 @@ $(OUT_NAME): $(OBJ_FILE)
 	clang $^ -o $@
 
 build/%.o: source/%.c
-	clang -O4 -march=native -I include -MMD -c $< -o $@
+	clang -O3 -march=native -I include -MMD -c $< -o $@
 
 make_dir:
 	mkdir -p $(BUILD_FOLDER)
