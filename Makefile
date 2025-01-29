@@ -7,7 +7,7 @@ BUILD_FOLDER := $(sort $(dir $(DEP_FILE)) $(dir $(OBJ_FILE)))
 all: make_dir $(OUT_NAME)
 
 $(OUT_NAME): $(OBJ_FILE)
-	clang $^ -o $@
+	clang -lncurses $^ -o $@
 
 build/%.o: source/%.c
 	clang -O3 -march=native -I include -MMD -c $< -o $@
